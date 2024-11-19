@@ -20,7 +20,7 @@
 
 ### Data preparation
 
-We provide four selected public traffic datasets in the shared folder [Google Drive](https://drive.google.com/drive/folders/1uyl5ZZ3EsFYT4h8ItnmtQKycJehoju1I?usp=drive_link). More related datasets can refer to the [`transdim`](https://github.com/xinychen/transdim/tree/master) project. Please download the datasets and put them in the `./datasets` folder. The overview of the provided datasets are:
+We provide four selected public traffic datasets in the shared folder [Google Drive](https://drive.google.com/drive/folders/1uyl5ZZ3EsFYT4h8ItnmtQKycJehoju1I?usp=drive_link). More related datasets can refer to the [`transdim`](https://github.com/xinychen/transdim/tree/master) project. Please download the datasets and put them in the `./datasets` folder. The overview of the provided datasets is as follows:
 
 - **Hangzhou:** [Hangzhou metro passenger flow dataset](https://tianchi.aliyun.com/competition/entrance/231708/information). This dataset contains information on incoming passenger flow for 80 metro stations in Hangzhou, China. The data covers a period of 25 days, from January 1st to January 25th, 2019, with a 10-minute resolution. The time interval from 0:00 a.m. to 6:00 a.m., when there are no services, has been excluded. Only the remaining 108 time intervals of a day are considered. The dataset is presented as a tensor of size $'80 \times 25 \times 108'$ ($'80 \times 2700'$ in the form of a time series matrix).
 
