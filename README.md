@@ -65,10 +65,10 @@ conda create --name lrtc --file requirements.txt
   author={Chen, Peng and Li, Fang and Wei, Deliang and Lu, Changhong},
   journal={IEEE Transactions on Intelligent Transportation Systems}, 
   title={Low-Rank and Deep Plug-and-Play Priors for Missing Traffic Data Imputation}, 
-  year={2024},
-  volume={},
-  number={},
-  pages={1-17},
-  doi={https://doi.org/10.1109/TITS.2024.3493864}
+  year={2025},
+  volume={26},
+  number={2},
+  pages={2690-2706},
+  doi={10.1109/TITS.2024.3493864}
 }
 ```
