@@ -4,9 +4,9 @@
 
 > This is the code repository for our works on low-rank tensor completion for missing traffic data imputation: 
 > 
-> [1] Peng Chen, Fang Li, Deliang Wei, and Changhong Lu, "Spatiotemporal traffic data completion with truncated minimax-concave penalty," Transportation Research Part C: Emerging Technologies, vol. 164, July 2024, Art. no. 104657.
+> [1] Peng Chen, Fang Li, Deliang Wei, and Changhong Lu, "Spatiotemporal traffic data completion with truncated minimax-concave penalty," Transportation Research Part C: Emerging Technologies, vol. 164, Art. no. 104657, July 2024.
 > 
-> [2] Peng Chen, Fang Li, Deliang Wei, and Changhong Lu, "Low-Rank and Deep Plug-and-Play Priors for Missing Traffic Data Imputation," IEEE Transactions on Intelligent Transportation Systems (Early Access), pp. 1-17, Nov. 2024.
+> [2] Peng Chen, Fang Li, Deliang Wei, and Changhong Lu, "Low-Rank and Deep Plug-and-Play Priors for Missing Traffic Data Imputation," IEEE Transactions on Intelligent Transportation Systems, vol. 26, no. 2, pp. 2690-2706, Feb. 2025.
 
 ## Methodology
 
@@ -42,6 +42,15 @@ conda create --name lrtc --file requirements.txt
 
 > The default command installs the `CPU` version of PyTorch. For faster computation of deep PnP processing using NVIDIA's CUDA, install the `CUDA` version based on your hardware and system. Check the [official website](https://pytorch.org/get-started/locally/) for installation instructions.
 
+## Update 2026-06-10:
+
+### Remark on the Choice of Penalty Function
+
+A careful inspection of the convergence analysis in LRTC-TMCP [1] reveals that the MCP penalty serves as a foundamental penalty that can be naturally generalized. The proof of Theorem~3.6 establishes that the convergence of the algorithm relies on the induced truncated norm being lower semicontinuous and prox-regular. By employing an argument analogous to the proof of Lemma~3.8 in [1], we show that these essential properties are preserved whenever the underlying penalty function itself is lower semicontinuous and prox-regular.
+
+This structural property allows the truncated norm framework defined in Definitions~3.3 and 3.4 of [1] to be extended from MCP to a much broader class of nonconvex penalty functions, such as `SCAD` penalty. To demonstrate this flexibility, we implement an SCAD-based variant, denoted as `LRTC-TSCAD`, in `demo_lrtc_tscad.ipynb`.
+
+Numerical experiments are conducted under the same traffic tensor completion setup as in [1], with the corresponding configurations and outcomes documented inside the notebook. Our results show that replacing MCP with SCAD leads to improved completion accuracy under several tested configurations, demonstrating that the proposed framework seamlessly accommodates alternative penalty designs to achieve even better performance.
 
 ## Cite Information
 
@@ -56,7 +65,6 @@ conda create --name lrtc --file requirements.txt
     year = {2024},
     issn = {0968-090X},
     doi = {https://doi.org/10.1016/j.trc.2024.104657},
-    url = {https://www.sciencedirect.com/science/article/pii/S0968090X24001785},
     author = {Peng Chen and Fang Li and Deliang Wei and Changhong Lu},
     publisher={Elsevier}
 }
