@@ -46,7 +46,7 @@ conda create --name lrtc --file requirements.txt
 
 ### Remark on the Choice of Penalty Function
 
-A careful inspection of the convergence analysis in LRTC-TMCP [1] reveals that the MCP penalty serves as a foundamental penalty that can be naturally generalized. The proof of Theorem~3.6 establishes that the convergence of the algorithm relies on the induced truncated norm being lower semicontinuous and prox-regular. By employing an argument analogous to the proof of Lemma~3.8 in [1], we show that these essential properties are preserved whenever the underlying penalty function itself is lower semicontinuous and prox-regular.
+A careful inspection of the convergence analysis in LRTC-TMCP [1] reveals that the MCP penalty serves as a foundamental penalty that can be naturally generalized. The proof of Theorem 3.6 establishes that the convergence of the algorithm relies on the induced truncated norm being lower semicontinuous and prox-regular. By employing an argument analogous to the proof of Lemma 3.8 in [1], we show that these essential properties are preserved whenever the underlying penalty function itself is lower semicontinuous and prox-regular.
 
 This structural property allows the truncated norm framework defined in Definitions~3.3 and 3.4 of [1] to be extended from MCP to a much broader class of nonconvex penalty functions, such as `SCAD` penalty. To demonstrate this flexibility, we implement an SCAD-based variant, denoted as `LRTC-TSCAD`, in `demo_lrtc_tscad.ipynb`.
 
